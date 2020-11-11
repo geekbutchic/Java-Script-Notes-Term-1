@@ -1,5 +1,5 @@
 # Java-Script-Notes-Term-1
-## Week - 8
+## `Week - 8`
 ### Notes :
 
 Assignment - Emagi Part (1)
@@ -7,14 +7,18 @@ Assignment - Emagi Part (1)
 **Front - End:**
 
 File Name: (main.js)
+
+### `Problem 1.`
+
+So right now, our function is what's known (in lingo far too fancy for what it does) as the `"identity function"` it returns what it's given.
+
 ```javascript
 const translateWord = require('./translate-word.js');
 
-// user's input in the terminal
 const userInput = process.argv[2];
-// the result of calling our internal function with their input  
+
 const result = translateWord(userInput);
-// our answer
+
 console.log(result);
 ```
 
@@ -47,6 +51,8 @@ const translateWord = function(word) {
 module.exports = translateWord;
 ```
 
+### `Problem 2.`
+
 The function bellow is taking in one word and verifying if that word is iin the emoji file.
 
 * We need to loop through to see if there is a match.  
@@ -54,6 +60,17 @@ The function bellow is taking in one word and verifying if that word is iin the 
 * We can loop through by using (const emoji of emojis)
 * If the word typed in matches emoji.name it will return emoji.symbol.
 
+Front End 
+```javascript 
+const translateWord = require('./translate-word.js');
+
+const userInput = process.argv[2];
+
+const result = translateWord(userInput);
+
+console.log(result)
+```
+Back End
 ```Javascript 
 const emojis = require('./emojis.js')
 
@@ -68,10 +85,57 @@ const translateWord = function(word) {
 
 module.exports = translateWord;
 ```
+* The four loop is checking against the word we passed through.
+
+* If it's not translatable and there is no matching emoji, it returns the word.
+*  We're taking in a user's word? In your loop, for each emoji, compare its `name` property to the `word` parameter. If they're ever the same, return that emoji's `symbol` property.
+*  The function translateWord has one job.  To take in one word and translate it 
+
+### `Problem 3.`  
+What if you type in `node main.js birthday cry`? We only get that first one.  But getting multiple words, or a full sentence, is a piece of cake!
+*  So to take in an array of words we can use `.map`.
+* `.map` says take this array of go through each element.  Call it with our helper function `translateWord` return the new array.
+* No need to change our helper function.  
+
+Front End 
+```javascript
+const translateWord = require('./translate-word.js');
+
+const userInput = process.argv.slice(2);
+
+console.log(userInput)
+
+const translation = []
+
+for (const word of userInput) {
+    const translateWord = translateWord = translateWord(word)
+    translation.push(translateWord);
+}
+
+console.log(translation); 
+```
+* map function 
+* make a new array 
+* `.push` into the new array
+* this is the function version 
+
+Clean version we use a `.map helper function`.
+
+```javascript
+const translateWord = require('./translate-word.js');
+
+const userInput = process.argv(2);
+
+const translation = userInput.map(translateWord)
+
+console.log(translation.join(' '));
+```
+* This gives an array with some emoji symbols that match the word. 
+
+* The `console.log(translation.join(' '));` returns the split array with a space in between 
 
 
-
-
+git 
 
 
 
