@@ -132,34 +132,73 @@ console.log(translation.join(' '));
 ```
 * This gives an array with some emoji symbols that match the word. 
 
-* The `console.log(translation.join(' '));` returns the split array with a space in between 
+* The `console.log(translation.join(' '));`.
+* `.join` takes an array and makes it into a string.
+* Translate goes word by word. `Cry in your fries` becomes `😭 in your 🍟`
 
+### `Problem 4.` 
+Back End:
+Function 
 
-git 
+File Name:`(encode-word.js)`
 
+Encoding means changing every LETTER in the input. We would represent this as a loop within a loop. `(In the example, it would be '🌵👽👅' for cat).`  We are changing it for one word.
 
+```javascript 
+const emojis = require('./emojis.js');
 
+const encodeWord = function(word) {
+    let result = '';
+    for (const letter of word) {
+        for (const emoji of emojis) {
+            if (emoji.letter === letter) {
+                result += emoji.symbol;
+            }
+        }
+    }
+    return result;
+}
 
+module.exports = encodeWord;
+```
+* Double Loop
+* for `(const letter of word)` it's looping through every letter of our word.
+*   For every letter we want to loop through our emojis `(const emoji of emojis)`.
+*   It is being put on `let result = 'string'`
+*   Check for a match if `(emoji.letter === letter).`  
 
+Front End 
 
+File Name:`(main.js)`
 
+```javascript
+const encodeWord = require('./encode-word.js')
 
+const userInput = process.argv[2]
 
+console.log(encodeWord(userInput))
+```
+* Run the word into `encodeWord(userInput)`
 
+*  Finally, after both loops are done, return our result.
 
+### Problem 5 
 
+`Cry in your fries` becomes `🌵🤖☯ 🍦📰 ☯🐙🦄🤖 🍟🤖🍦🐘💀`, with every letter becoming an emoji standing for that letter.
+* No need to change the backend function just the front end to accommodate for the words after `process.argv[2].`
 
+Front End
+File Name: `(main.js)` 
+```javascript 
+const encodeWord  = require('./encode-word.js');
 
+const userInput = process.argv.slice(2);
 
-
-
-
-
-
-
-
-
-
+const encodedSentence = userInput.map(encodeWord)
+ 
+console.log(encodedSentence.join(' '));
+```
+* Similar to what was used in translateWord Front End.
 
 
 
