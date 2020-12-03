@@ -4,7 +4,7 @@ console.dir(document.childNodes[1])
 const toDoList = document.querySelector('ul');
 console.dir(toDoList.style);
 toDoList.style.color = 'blue';
-toDoList.style.fontSize = '1`em'
+toDoList.style.fontSize = '1em'
 
 
 
