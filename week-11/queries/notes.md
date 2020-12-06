@@ -54,7 +54,7 @@
 
 ### Tags to use when linking CSS and HTML
 * For CSS -  `<link rel="stylesheet" href="style.css">`
-* Goes below title.
+* Goes in head section.
   
 * For HTML - `<script src="./main.js"></script>`
 * Goes at the end right above body.
