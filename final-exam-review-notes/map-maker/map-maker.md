@@ -1,4 +1,4 @@
-# Map-Maker Assignment 
+# Array Lecture 
 ## About: Introduction to Arrays
 
 * `if it's = [] it's an array.`
@@ -84,3 +84,9 @@ animals.reverse();
 ```
 * reverse elements in the array 
 
+## Arrays in the Wild 
+
+`const twitterPosts = [];`
+* empty array
+* to be filled in by 
+     
