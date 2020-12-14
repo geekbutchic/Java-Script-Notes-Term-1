@@ -2,6 +2,7 @@
 ## About: Introduction to Arrays
 
 * `if it's = [] it's an array.`
+
 * const students = `['Tre', 'Santino', 'Patrick']`
 * these are called values, separated by commas.
 
@@ -19,6 +20,7 @@ for (let i = 0; i < student.length; i++) {
 
 ```javascript 
 let studentAlt = ['Tom', 'Ashley', 'Grace', 'Sonny']
+
 studentAlt[0] = 'Kelly'
 // Mutation changing sub-values 
 for (const stu of studentAlt) {
@@ -45,6 +47,7 @@ moreAnimals; ['Cat', 'Dog', 'Bird','Elephant', 'Flamingo', 'Rat']
 animals; ['Elephant', 'Flamingo', 'Rat'];
 ```
 * `.pop()` removes the end of the array value 
+
 * `it will always remove the end value does not require`
 * `argument in param`
 ```javascript 
@@ -52,12 +55,14 @@ animals.pop();
 // see .js file for example
 ```
 * `.shift()`; always removes from the start of the array
+
 * does not require argument in param
 
 ```javascript
 animals.shift();
 ```
 * `.unshift();` 
+
 * adds value to beginning of Array 
 * requires argument in param.
 ```javascript 
@@ -65,15 +70,17 @@ animals.unshift('Shark');
 // see .js fro example 
 ```
 * `.slice();`
+
 * returns a section of the array.
 ```javascript 
 animals.slice(0, 3);
 // see .js file for example
 ```
 * `.splice(1, 1)`
+
 * removes section of an array 
 ```javascript
 animals.reverse();
 ```
-
+* reverse elements in the array 
 
